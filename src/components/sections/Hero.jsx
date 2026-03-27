@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 const images = [
-  "../../public/hero/01.jpg",
-  "../../public/hero/02.jpg",
-  "../../public/hero/03.jpg",
-  "../../public/hero/04.jpg",
-  "../../public/hero/05.jpg",
+  "/hero/01.jpg",
+  "/hero/02.jpg",
+  "/hero/03.jpg",
+  "/hero/04.jpg",
+  "/hero/05.jpg",
 ];
 
 export default function Hero() {
