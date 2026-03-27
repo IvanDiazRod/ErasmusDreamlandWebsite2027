@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Home from "./pages/Home";
 import Footer from "./components/layout/Footer";
-import AboutUs from "./components/sections/Aboutus";
+import AboutUs from "./components/sections/AboutUs";
 import BuyTickets from "./components/sections/BuyTickets";
 import Gallery from "./components/sections/Gallery";
 import Festivals from "./components/sections/Festivals";
