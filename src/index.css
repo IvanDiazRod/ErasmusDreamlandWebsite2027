@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+*::selection {
+  background-color: #FDE047;
+  color: black;
+}
+
+.text-dreamland {
+    color: #FDE047;
+}
+.text-dreamland:hover {
+  color: #ffdf3e;
+}
+.bg-dreamland {
+    background-color: #FDE047;
+}
+.whatsapp-button {
+  background-color: none;
+}
+.whatsapp-button:hover {
+  background-color: #FDE047
+}
+.bg-dreamland:hover {
+  background-color: #ffda24;
+}
+.border-dreamland {
+  border: 2px solid #FDE047;
+}
+.footer-link {
+  color: #d1d5db;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #FDE047;
+}
+.header-link {
+  color: white;
+  transition: color 0.3s ease;
+}
+.header-link:hover {
+  color: #FDE047;
+}
+.instagram-btn {
+  border: 2px solid #FDE047;
+  color: #FDE047;
+  transition: 200ms all;
+}
+.instagram-btn:hover {
+  background-color: #FDE047;
+  color: black;
+}
+.animate-fadeUp {
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #facc15;
+  border-radius: 10px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease forwards;
+}
