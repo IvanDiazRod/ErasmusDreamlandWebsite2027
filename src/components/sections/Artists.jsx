@@ -69,73 +69,73 @@ const artistsData = [
   {
     name: "Omar Montes",
     description: "Artista Número 1 de España, con más de 10 canciones en el top 50, se una a nuestra familia erasmus tras realizar su gira por europa con nosotros.",
-    img: "artists/omarmontes.png",
+    img: "/artists/omarmontes.png",
     social: "https://instagram.com/djstellar"
   },
   {
     name: "Kiko Rivera",
     description: "Creador del hit mundial 'El Mambo' y conocido por todas las generaciones de Españoles, se une a la familia Erasmus.",
-    img: "artists/kiko.png",
+    img: "/artists/kiko.png",
     social: "https://instagram.com/djstellar"
   },
   {
     name: "Selecta",
     description: "El niño, productor de artistas como Recycled J, Duki, Neo Pistea, Don Patricio, Bejo, ATICA o Israel B, entre otros, Selecta se consolida como uno de los productores clave en el panorama musical español con un estilo propio imposible de encasillar.",
-    img: "../../public/artists/selecta.png",
+    img: "/artists/selecta.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Papi Gavi",
     description: "Uno de los creadores de contenido más conocido y querido por el público español, da su salto a los escenarios llevando a Europa el mejor reggaeton.",
-    img: "../../public/artists/gavi.png",
+    img: "/artists/gavi.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Alvama Ice",
     description: "El madrileño se dio a conocer tras subir sus sesiones a las redes sociales durante el confinamiento, alcanzando el millón de seguidores en TikTok y siendo conocido desde entonces por sus propios remixes y mashups, con ritmos de hip hop, trap o reggaeton.",
-    img: "../../public/artists/alvama.png",
+    img: "/artists/alvama.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Henry Mendez",
     description: "Directo desde España y RD, y con sus temas 'Rayos de sol', 'Mi reina', o 'El tiburón', Hnery Mendez llega a Europa para asegurarse que tu noche Erasmus sea inolvidable.",
-    img: "../../public/artists/henrymendez.png",
+    img: "/artists/henrymendez.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Carmen de la Fuente",
     description: "Con más de 200K seguidores en redes, Carmen de la Fuente se ha proclamado la DJ con más impacto del panorama español.",
-    img: "../../public/artists/carmen.png",
+    img: "/artists/carmen.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Alex Martini",
     description: "DJ y productor musical español conocido por sus mashups y su éxito 'Dime Bebesita', que acumula más de 38 millones de reproducciones. DJ residente en Shoko Madrid, con más de 500.000 seguidores en las redes sociales.",
-    img: "../../public/artists/martini.png",
+    img: "/artists/martini.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Aissa",
     description: "Con su mayor éxito, 'Las Bratz', Aissa es una cantante marroquí que está a punto de alcanzar la cima del género urbano.",
-    img: "../../public/artists/aissa.png",
+    img: "/artists/aissa.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Barce",
     description: "Con sólo 24 años, es uno de los DJ más solicitados de España. El autodenominado 'Pájaro' está listo para volar con nosotros por toda Europa.",
-    img: "../../public/artists/barce.png",
+    img: "/artists/barce.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Jorge Cremades",
     description: "Con más de 3M de seguidores en las redes sociales, Jorge Cremades es un conocido Instagramer, que ahora ha dado el salto a su carrera como DJ. Pura energía y diversión",
-    img: "../../public/artists/cremades.png",
+    img: "/artists/cremades.png",
     social: "https://instagram.com/djstellar"
   },
     {
     name: "Vybs",
     description: "With more than 400k followers on TikTok thanks to his absolutely macabre humour videos, Vybs presents his new facet as a DJ, so that all future Erasmus students can dance to the rhythm of his madness.",
-    img: "../../public/artists/vybs.png",
+    img: "/artists/vybs.png",
     social: "https://instagram.com/djstellar"
   },
 ];
@@ -154,7 +154,7 @@ export default function Artists() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
   {visibleArtists.map((artist, index) => (
     <ArtistCard
-      key={artist.name} // mejor que index
+      key={artist.name}
       artist={artist}
       index={index}
     />
