@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { whatsappGroups } from "../../data/WhatsappGroups";
+import { whatsappGroups } from "../../data/WhatsappGroupsClean.jsx";
 
 export default function WhatsAppSection() {
   const [selectedCountry, setSelectedCountry] = useState(null);
