@@ -146,7 +146,7 @@ export default function Artists() {
 
   const visibleArtists = showAll ? artistsData : artistsData.slice(0, 6);
   return (
-    <section id="artists" className="py-20 bg-gray-900 text-white">
+    <section id="artists" className="py-20 bg-neutral-800 text-white">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-12">Nuestros Artistas</h2>
         <p className="text-3xl md:text-2xl mb-12 text-dreamland">Conoce a los DJ's que te van a hacer bailar durante el mejor año de tu vida.</p>

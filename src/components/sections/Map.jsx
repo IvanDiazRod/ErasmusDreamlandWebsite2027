@@ -159,7 +159,7 @@ const events = [
   }, []);
 
   return (
-    <section className="py-24">
+    <section className="py-24 bg-neutral-900">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-dreamland mb-8">¿Donde hemos estado?</h2>
       <p className="text-3xl md:text-2xl text-center text-white mb-8">En nuestro primer año de vida, hemos estado en más de 20 países europeos. ¿Puedes encontrar dónde?</p>
       <div className="text-center mb-8 px-4">

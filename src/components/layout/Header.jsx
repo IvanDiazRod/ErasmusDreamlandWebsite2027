@@ -101,7 +101,7 @@ const Title = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <Link to="/WhatsAppSection" className="bg-dreamland text-black px-4 py-2 rounded-full font-semibold transition duration-300">WhatsApp 25/26</Link>
+          <a target="_blank" href="https://beacons.ai/gruposwhatsapperasmus" className="bg-dreamland text-black px-4 py-2 rounded-full font-semibold transition duration-300">WhatsApp 25/26</a>
           <Link to="/WhatsAppSection" className="border border-dreamland px-4 py-2 rounded-full whatsapp-button hover:text-black transition">WhatsApp 26/27</Link>
         </div>
 

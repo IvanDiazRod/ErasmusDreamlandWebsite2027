@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const images = [
@@ -27,8 +28,8 @@ export default function Hero() {
           <h1 className="text-4xl md:text-5xl font-bold leading-tight">El mayor festival Erasmus de Europa</h1>
           <p className="mt-6 text-lg md:text-xl text-dreamland tracking-wide">By Erasmus, for Erasmus.</p>
           <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
-            <a href="#eventos" className="bg-dreamland text-black px-8 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300">Ver próximos eventos</a>
-            <a href="#whatsapp" className="border border-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-black hover:scale-105 transition-all duration-300">Unirme al WhatsApp</a>
+            <Link to="tickets" className="bg-dreamland text-black px-8 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300">Ver próximos eventos</Link>
+            <Link to="WhatsAppSection" className="border border-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-black hover:scale-105 transition-all duration-300">Unirme al WhatsApp</Link>
           </div>
         </div>
       </section>
