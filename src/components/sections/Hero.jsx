@@ -2,11 +2,15 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const images = [
-  "/hero/01.jpg",
-  "/hero/02.jpg",
-  "/hero/03.jpg",
-  "/hero/04.jpg",
-  "/hero/05.jpg",
+  "/hero/01.jpeg",
+  "/hero/02.jpeg",
+  "/hero/03.jpeg",
+  "/hero/04.jpeg",
+  "/hero/05.jpeg",
+  "/hero/06.jpeg",
+  "/hero/07.jpeg",
+  "/hero/08.jpeg",
+  "/hero/09.jpeg",
 ];
 
 export default function Hero() {
@@ -29,7 +33,7 @@ export default function Hero() {
           <p className="mt-6 text-lg md:text-xl text-dreamland tracking-wide">By Erasmus, for Erasmus.</p>
           <div className="mt-10 flex flex-col md:flex-row items-center justify-center gap-6">
             <Link to="tickets" className="bg-dreamland text-black px-8 py-3 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300">Ver próximos eventos</Link>
-            <Link to="WhatsAppSection" className="border border-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-black hover:scale-105 transition-all duration-300">Unirme al WhatsApp</Link>
+            <Link to="grupos-whatsapp-erasmus" className="border border-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-black hover:scale-105 transition-all duration-300">Grupos WhatsApp Erasmus 26/27</Link>
           </div>
         </div>
       </section>

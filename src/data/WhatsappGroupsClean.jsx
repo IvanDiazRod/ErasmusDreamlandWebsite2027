@@ -15,11 +15,15 @@ export const whatsappGroups = whatsappLinksInfo.map((country) => ({
   states: country.data.map((city) => ({
     name: city.city,
     slug: slugify(city.city),
-    groups: [
-      {
-        name: `Erasmus ${city.city} 26/27`,
-        link: city.whatsappLink.split("?")[0],
-      },
-    ],
+groups: [
+  {
+    name: `Erasmus ${city.city} 26/27`,
+    link: city.whatsappLink?.split("?")[0] || null,
+  },
+  {
+    name: `Erasmus ${city.city} 25/26`,
+    link: city.whatsappLink2?.split("?")[0] || null,
+  },
+]
   })),
 }));

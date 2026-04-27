@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import { FaInstagram, FaFacebookF, FaTwitter, FaTiktok } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaTwitter, FaTiktok, FaYoutube } from "react-icons/fa";
 
 function SocialDropdown({ currentPath }) {
 
@@ -20,7 +20,7 @@ function SocialDropdown({ currentPath }) {
 
   const socials = [
     { name: "Instagram", icon: <FaInstagram />, link: "https://instagram.com/erasmusdreamland" },
-    { name: "Facebook", icon: <FaFacebookF />, link: "https://www.facebook.com/erasmusdreamland/" },
+    { name: "Facebook", icon: <FaYoutube />, link: "https://www.youtube.com/@erasmusdreamland" },
     { name: "Twitter", icon: <FaTwitter />, link: "https://x.com/erasmusdreamlan" },
     { name: "TikTok", icon: <FaTiktok />, link: "https://tiktok.com/@erasmusdreamland" },
   ];

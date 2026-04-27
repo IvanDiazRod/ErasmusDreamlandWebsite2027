@@ -101,8 +101,8 @@ const Title = () => {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <a target="_blank" href="https://beacons.ai/gruposwhatsapperasmus" className="bg-dreamland text-black px-4 py-2 rounded-full font-semibold transition duration-300">WhatsApp 25/26</a>
-          <Link to="/WhatsAppSection" className="border border-dreamland px-4 py-2 rounded-full whatsapp-button hover:text-black transition">WhatsApp 26/27</Link>
+
+          <Link to="/grupos-whatsapp-erasmus" className="bg-dreamland text-black px-4 py-2 rounded-full font-semibold transition duration-300">Grupos WhatsApp Erasmus 26/27</Link>
         </div>
 
         <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden flex flex-col gap-1">
@@ -121,8 +121,8 @@ const Title = () => {
           <SocialDropdown currentPath={currentPath} />
           <Link to="/festivals" onClick={() => setIsOpen(false)} className={`relative group header-link ${currentPath === "/festivals" ? "text-dreamland" : ""}`}>Festivales<span className={`absolute left-0 -bottom-1 w-0 h-0.5 bg-dreamland transition-all duration-300 group-hover:w-full ${currentPath === "/festivals" ? "w-full" : ""}`}></span></Link>
 
-          <Link to="/WhatsAppSection" className="bg-dreamland text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition duration-300">WhatsApp 25/26</Link>
-          <Link to="/WhatsAppSection" className="border border-dreamland px-4 py-2 rounded-full whatsapp-button hover:text-black transition">WhatsApp 26/27</Link>
+
+          <Link to="/grupos-whatsapp-erasmus" onClick={() => setIsOpen(false)} className="bg-dreamland border border-dreamland px-4 py-2 rounded-full whatsapp-button text-black transition">WhatsApp 26/27</Link>
         </div>
       </div>
     </header>

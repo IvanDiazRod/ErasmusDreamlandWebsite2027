@@ -1,30 +1,39 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { whatsappGroups } from "../../data/WhatsappGroupsClean.jsx";
+import { countryImages } from "../../data/CountryImages.jsx";
+import { cityImages } from "../../data/cityImages.jsx";
 
 export default function WhatsAppSection() {
   const [selectedCountry, setSelectedCountry] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [citySearchTerm, setCitySearchTerm] = useState("");
+
+useEffect(() => {
+  const timeoutId = setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+  }, 10);
+
+  return () => clearTimeout(timeoutId);
+}, [selectedCountry, selectedState]);
 
   return (
     <section className="min-h-screen bg-gray-950 text-white py-20">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* TITLE */}
-<h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-dreamland mb-6 leading-tight">
-  Grupos de WhatsApp
-</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center text-dreamland mb-6 leading-tight">Grupos WhatsApp Erasmus</h1>
+        <h2 className="text-center text-gray-300 mb-16 text-lg">Únete al grupos de WhatsApp Erasmus de tu ciudad</h2>
 
-        <p className="text-center text-gray-300 mb-16 text-lg">
-          Encuentra tu ciudad y únete a la comunidad Erasmus
-        </p>
-
-        {/* BREADCRUMB */}
         <div className="mb-8 text-sm text-gray-400">
           <span
             className="cursor-pointer hover:text-dreamland"
             onClick={() => {
               setSelectedCountry(null);
               setSelectedState(null);
+              setCitySearchTerm("");
             }}
           >
             Países
@@ -35,7 +44,9 @@ export default function WhatsAppSection() {
               {" > "}
               <span
                 className="cursor-pointer hover:text-dreamland"
-                onClick={() => setSelectedState(null)}
+                onClick={() => {
+  setSelectedState(null);
+}}
               >
                 {selectedCountry.country}
               </span>
@@ -52,41 +63,102 @@ export default function WhatsAppSection() {
           )}
         </div>
 
-        {!selectedCountry && (
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {whatsappGroups.map((country) => (
-              <div
-                key={country.slug}
-                onClick={() => setSelectedCountry(country)}
-                className="p-6 bg-neutral-800 rounded-2xl cursor-pointer hover:scale-105 hover:bg-neutral-700 transition"
-              >
-                <h2 className="text-xl font-bold mb-2">
-                  {country.country}
-                </h2>
+        {/* Buscador */}
+{!selectedCountry && (
+  <div className="mb-10 max-w-xl mx-auto relative">
+    <input
+      type="text"
+      placeholder="Buscar país..."
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+      className="w-full px-5 py-3 rounded-full bg-neutral-800 border border-neutral-700 text-white placeholder-gray-400 focus:outline-none focus:border-dreamland transition"
+    />
+  </div>
+)}
+{/* Buscador de ciudades */}
+{selectedCountry && !selectedState && (
+  <div className="mb-10 max-w-xl mx-auto relative">
+    <input
+      type="text"
+      placeholder={`Buscar ciudad en ${selectedCountry.country}...`}
+      value={citySearchTerm}
+      onChange={(e) => setCitySearchTerm(e.target.value)}
+      className="w-full px-5 py-3 rounded-full bg-neutral-800 border border-neutral-700 text-white placeholder-gray-400 focus:outline-none focus:border-dreamland transition"
+    />
+  </div>
+)}
 
-                <p className="text-gray-400 text-sm">
-                  {country.states.length} ciudades
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
+        {!selectedCountry && (
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {whatsappGroups
+  .filter((country) =>
+    country.country
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  )
+  .map((country) => (
+      <div
+        key={country.slug}
+        onClick={() => {
+  setSelectedCountry(country);
+  setCitySearchTerm("");
+}}
+        className="relative h-64 rounded-2xl cursor-pointer overflow-hidden group"
+      >
+        {/* Imagen de fondo */}
+        <img src={countryImages[country.slug] || "/countries/default.jpg"} alt={country.country} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700" />
+
+        {/* Overlay oscuro */}
+        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition duration-500"></div>
+
+        {/* Contenido */}
+        <div className="relative z-10 h-full flex flex-col justify-end p-6">
+          <h2 className="text-2xl font-bold mb-2 text-white">
+            {country.country}
+          </h2>
+
+          <p className="text-gray-200 text-sm">
+            {country.states.length} ciudades
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+)}
 
         {selectedCountry && !selectedState && (
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {selectedCountry.states.map((state) => (
+            {selectedCountry.states
+  .filter((state) =>
+    state.name
+      .toLowerCase()
+      .includes(citySearchTerm.toLowerCase())
+  )
+  .map((state) => (
               <div
                 key={state.slug}
                 onClick={() => setSelectedState(state)}
-                className="p-6 bg-neutral-800 rounded-2xl cursor-pointer hover:scale-105 hover:bg-neutral-700 transition"
+                className="relative h-64 rounded-2xl cursor-pointer overflow-hidden group"
               >
-                <h2 className="text-lg font-semibold">
-                  {state.name}
-                </h2>
+                {/* Imagen de fondo */}
+                <img
+                  src={cityImages[state.slug] || "/cities/default.jpg"}
+                  alt={state.name}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                />
 
-                <p className="text-gray-400 text-sm mt-2">
-                  {state.groups.length} grupos
-                </p>
+                {/* Overlay oscuro */}
+                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition duration-500"></div>
+
+                {/* Contenido */}
+                <div className="relative z-10 h-full flex flex-col justify-end p-6">
+                  <h2 className="text-2xl font-bold mb-2 text-white">
+                    {state.name}
+                  </h2>
+                  <p className="text-gray-200 text-sm">
+                    {state.groups.length} grupos
+                  </p>
+                </div>
               </div>
             ))}
           </div>

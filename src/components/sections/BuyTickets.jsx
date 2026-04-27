@@ -50,7 +50,7 @@ export default function BuyTickets() {
       id="buy-tickets"
       className="iframe-container"
       style={{
-        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero/04.jpg')",
+        backgroundImage: "linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero/07.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
